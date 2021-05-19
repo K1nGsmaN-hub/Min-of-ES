@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const MainWrapper = styled.main`
+export const MainWrapper = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
