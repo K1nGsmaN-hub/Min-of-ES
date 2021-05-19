@@ -64,8 +64,12 @@ export const HeaderWrapper = styled.header`
 
     & a {
       padding: 10px 15px;
-      background-color: green;
+      background-color: cornflowerblue;
       border: 1px solid #000;
+
+      &.active {
+        background-color: green;
+      }
 
       &:not(:last-child) {
         margin-right: 15px;

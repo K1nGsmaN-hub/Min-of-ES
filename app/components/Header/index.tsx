@@ -1,6 +1,7 @@
 import * as React from "react";
 
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import { Container } from "app/sc/Container";
 import { HeaderWrapper } from "./style";
@@ -8,6 +9,8 @@ import { HeaderWrapper } from "./style";
 import { navLinks } from "./mock";
 
 const Header: React.FC = () => {
+  const router = useRouter();
+
   return (
     <Container>
       <HeaderWrapper>
@@ -30,7 +33,15 @@ const Header: React.FC = () => {
         <nav>
           {navLinks.map(({ id, title, path }) => (
             <Link href={path} key={id}>
-              <a>{title}</a>
+              <a
+                className={
+                  router.pathname.split("/")[1] === path.split("/")[1]
+                    ? "active"
+                    : ""
+                }
+              >
+                {title}
+              </a>
             </Link>
           ))}
         </nav>
