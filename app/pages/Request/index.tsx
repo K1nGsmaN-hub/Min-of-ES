@@ -33,8 +33,6 @@ class RequestPage extends React.PureComponent<any, IState> {
   render() {
     const { name, phone, city, category, plot } = this.state.formFields;
 
-    console.log(this.state.formFields)
-
     return (
       <Container>
         <RequestWrapper>
