@@ -24,4 +24,9 @@ export const navLinks = [
     title: "Контакты",
     path: "/contacts",
   },
+  {
+    id: 6,
+    title: "Выезд",
+    path: "/departure",
+  },
 ];

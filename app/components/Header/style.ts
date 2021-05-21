@@ -71,6 +71,10 @@ export const HeaderWrapper = styled.header`
         background-color: green;
       }
 
+      &.orange {
+        background-color: orange;
+      }
+
       &:not(:last-child) {
         margin-right: 15px;
       }
