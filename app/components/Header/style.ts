@@ -67,7 +67,8 @@ export const HeaderWrapper = styled.header`
       background-color: cornflowerblue;
       border: 1px solid #000;
 
-      &.active {
+      &.active,
+      &.active.orange {
         background-color: green;
       }
 

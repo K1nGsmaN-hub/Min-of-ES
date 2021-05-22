@@ -34,17 +34,17 @@ const Header: React.FC = () => {
           {navLinks.map(({ id, title, path }) => {
             const classList: string[] = [];
 
-            if (router.pathname.split("/")[1] === path.split("/")[1]) {
-              classList.push("active");
-            }
-
             if (id === 6) {
               classList.push("orange");
             }
 
+            if (router.pathname.split("/")[1] === path.split("/")[1]) {
+              classList.push("active");
+            }
+
             return (
               <Link href={path} key={id}>
-                <a className={classList.join(",")}>{title}</a>
+                <a className={classList.join(" ")}>{title}</a>
               </Link>
             );
           })}
