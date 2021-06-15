@@ -60,7 +60,7 @@ class EnterPage extends React.PureComponent<any, IState> {
       name: nickname,
     });
 
-    postData("https://cors-anywhere.herokuapp.com/http://my-dimplom-api.nginx/register.php", {
+    postData("http://my-diplom-api.nginx/register.php", {
       method: "POST",
       body,
     }).then((res) => {
