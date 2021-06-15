@@ -1,7 +1,7 @@
 <?php 
 	$host		= "localhost";
 	$user		= "root";
-	$pass		= "505aea3e34d14b37";
+	$pass		= "1234";
 	$charset 	= "utf8";
 	$database 	= "search_and_rescue";
 

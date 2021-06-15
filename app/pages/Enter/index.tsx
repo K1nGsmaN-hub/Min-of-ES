@@ -2,6 +2,7 @@ import * as React from "react";
 
 import { Container } from "app/sc/Container";
 import { EnterWrapper } from "./style";
+import { postData } from "../../services";
 
 class EnterPage extends React.PureComponent<any, IState> {
   state: IState = {
@@ -46,6 +47,25 @@ class EnterPage extends React.PureComponent<any, IState> {
         [e.target.name]: e.target.checked,
       },
     }));
+  };
+
+  submitHandler = (e: React.FormEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+
+    const { login, password, nickname, phone } = this.state.formFields;
+    const body = JSON.stringify({
+      login,
+      password,
+      phone,
+      name: nickname,
+    });
+
+    postData("https://cors-anywhere.herokuapp.com/http://my-dimplom-api.nginx/register.php", {
+      method: "POST",
+      body,
+    }).then((res) => {
+      console.log(res);
+    });
   };
 
   render() {
@@ -191,7 +211,9 @@ class EnterPage extends React.PureComponent<any, IState> {
               />
             </div>
 
-            <button type="submit">Отправить</button>
+            <button type="submit" onClick={this.submitHandler}>
+              Отправить
+            </button>
           </form>
         </EnterWrapper>
       </Container>
