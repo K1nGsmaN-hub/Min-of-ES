@@ -7,16 +7,19 @@ import { Container } from "app/sc/Container";
 import { HeaderWrapper } from "./style";
 
 import { navLinks } from "./mock";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../store";
 
 const Header: React.FC = () => {
   const router = useRouter();
+  const isAuth = useSelector((state: RootState) => state.authReducer.isAuth);
 
   return (
     <Container>
       <HeaderWrapper>
         <div className="upper">
           <div className="logo">
-            <p>L</p>
+            <p>ДСО</p>
           </div>
 
           <div className="title">
@@ -34,7 +37,11 @@ const Header: React.FC = () => {
           {navLinks.map(({ id, title, path }) => {
             const classList: string[] = [];
 
+            if (id === 3 && isAuth) return;
+
             if (id === 6) {
+              if (!isAuth) return;
+
               classList.push("orange");
             }
 

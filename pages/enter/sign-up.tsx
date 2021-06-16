@@ -1,14 +1,14 @@
 import * as React from "react";
 
 import { Layout } from "app/components/Layout";
-import { EnterPage } from "app/pages";
+import { SignUpPage } from "app/pages/Enter/SignUp";
 
-const Enter = () => {
+const SignUp = () => {
   return (
     <Layout>
-      <EnterPage />
+      <SignUpPage />
     </Layout>
   );
 };
 
-export default Enter;
+export default SignUp;

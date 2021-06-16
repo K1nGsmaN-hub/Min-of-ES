@@ -4,11 +4,6 @@
 	include 'database.php';
 	include 'readjson.php';
 
-	if (!isset($_SESSION["active_login"])) {
-		echo "Отказано в доступе";
-		die();
-	}
-
 	switch ($data["type"]) {
 		case 'emergency':
 		case 'fire':

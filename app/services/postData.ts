@@ -6,6 +6,7 @@ type TInit = {
 type TReturnData = {
   status: number;
   statusText: string;
+  text: Promise<string>;
 };
 
 export const postData = async (
@@ -26,5 +27,6 @@ export const postData = async (
   return {
     status,
     statusText,
+    text: res.text(),
   };
 };
